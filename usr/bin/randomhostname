@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Provides:          randomhostname
+
+#systemctl service.network-manager stop
+
+old=$(cat /etc/hostname)
+new=$(tr -dc 'A-Z0-9' < /dev/urandom | head -c12)
+sed -i "s/$old/$new/g" /etc/hosts
+sed -i "s/$old/$new/g" /etc/hostname
+hostname "$new"
+
+#systemctl service.network-manager start
+
+exit 0
