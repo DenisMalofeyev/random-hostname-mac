@@ -1,0 +1,11 @@
+[Unit]
+DefaultDependencies=no
+Description= randomhostname
+After=sysinit.target local-fs.target
+Before=basic.target
+
+[Service]
+ExecStart=/usr/bin/randomhostname
+
+[Install]
+WantedBy=basic.target
