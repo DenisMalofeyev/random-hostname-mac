@@ -3,7 +3,7 @@
 # Provides:          randomhostname
 
 #uncomment for using without reboot
-#systemctl stop NetworkManage.service
+#systemctl stop NetworkManager.service
 
 
 old=$(cat /etc/hostname)
